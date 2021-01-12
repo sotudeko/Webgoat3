@@ -57,24 +57,9 @@
         </resources>
         
         <plugins>
-		
-		<!-- Nexus IQ -->
-        <!-- <plugin>
-	        <groupId>com.sonatype.clm</groupId>
-	        <artifactId>clm-maven-plugin</artifactId>
-	        <version>2.14.0-01</version>
-	        <configuration>
-	          <serverUrl>http://localhost:8070</serverUrl>
-	          <applicationId>webgoat-mvn</applicationId>
-	          <stage>build</stage>
-	          <username>admin</username>
-	          <password>admin123</password>
-	        </configuration>
-      	</plugin> -->
-        <!-- Nexus IQ -->
 
         <!-- unpack dependencies -->
-        <plugin>
+        <!-- <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
             <version>3.1.2</version>
             <executions>
@@ -95,7 +80,7 @@
                     </configuration>
                 </execution>
             </executions>
-        </plugin>
+        </plugin> -->
 
         <!-- executable jar -->
         <!-- <plugin>
@@ -134,7 +119,7 @@
         </plugin> -->
 
         <!-- uber jar -->
-        <plugin>
+        <!-- <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
             <version>3.2.2</version>
@@ -174,11 +159,11 @@
                         </transformers>
                     </configuration>
                 </execution>
-            </executions>
-        </plugin> 
+            </executions> 
+        </plugin> -->
 
         <!-- fat jar -->
-        <plugin>
+        <!-- <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-assembly-plugin</artifactId>
 			<version>3.2.0</version>
@@ -201,9 +186,8 @@
 					</goals>
 				  </execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 
-	       
         </plugins>
     </build>
 
