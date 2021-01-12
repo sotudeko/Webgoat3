@@ -31,8 +31,7 @@ pipeline {
                 script{
                 
                     try {
-                        def policyEvaluation = nexusPolicyEvaluation 
-						                        failBuildOnNetworkError: true, 
+                        def policyEvaluation = nexusPolicyEvaluation failBuildOnNetworkError: true, 
                                                 iqApplication: selectedApplication('webgoat-simple'), 
                                                 iqScanPatterns: [[scanPattern: '**/*.war']], 
                                                 iqStage: 'build', 
