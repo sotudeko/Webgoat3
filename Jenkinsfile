@@ -35,7 +35,7 @@ pipeline {
                                                 iqApplication: selectedApplication('webgoat-simple'), 
                                                 iqScanPatterns: [[scanPattern: '**/*.war']], 
                                                 iqStage: 'build', 
-                                                jobCredentialsId: 'admin'
+                                                jobCredentialsId: 'injected'
                         echo "Nexus IQ scan succeeded: ${policyEvaluation.applicationCompositionReportUrl}"
                         IQ_SCAN_URL = "${policyEvaluation.applicationCompositionReportUrl}"
                     } 
