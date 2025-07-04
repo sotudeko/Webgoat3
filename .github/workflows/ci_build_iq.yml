@@ -39,5 +39,6 @@ jobs:
         password: admin123
         application-id: webgoat3_gha
         scan-targets: target/*.war
+
      
    
