@@ -1,0 +1,39 @@
+
+name: Build webgoat app
+
+on: push
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 8
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        
+    - name: Cache Maven packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+        
+    - name: Build with Maven
+      run: mvn --batch-mode clean package -Dmaven.test.skip=true 
+
+    - name: What have we got? 
+      run: ls -l target/
+
+    - name: Run if no fail 
+      run: echo 'This step should NOT run if the IQ scan found critical violations'
+     
+   
