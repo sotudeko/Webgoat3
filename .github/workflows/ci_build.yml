@@ -30,10 +30,14 @@ jobs:
     - name: Build with Maven
       run: mvn --batch-mode clean package -Dmaven.test.skip=true 
 
-    - name: What have we got? 
-      run: ls -l target/
-
-    - name: Run if no fail 
-      run: echo 'This step should NOT run if the IQ scan found critical violations'
+    - name: Evaluate with Sonatype CLI
+      id: evaluate
+      uses: sonatype/actions/evaluate@v1
+      with:
+        iq-server-url: https://84e2-2a00-23c7-6428-8001-ecfc-4f0f-1bd3-f0aa.ngrok-free.app
+        username: admin
+        password: admin123
+        application-id: webgoat3_gha
+        scan-targets: target/*.war
      
    
