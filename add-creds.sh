@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# add creds
+
 USERNAME=solao
 PASSWD=solao
 JENKINS_HOST=localhost
